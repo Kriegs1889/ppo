@@ -1,6 +1,6 @@
 # Iniciando um projeto Node.js com TypeScript
-
-Crie um diretório para o projeto e acesse-o pelo vscode, abra o terminal e siga os passos abaixo.
+abra o github e crie um repositório,para criar um repositório, va na barra da esquerda, clique no botao "new", vá em "repository name" e de um nome a seu seu repositório, depois, vá para a opção "add a README file" e a habilite. Após isso, apenas clique na opção "create repository" e parabens, voce criou um repositório :]
+Depois disso, crie uma pasta, abra o github, va na opção "clone git repository" vá no repositório que voce criou, vá na opção "code", copie o link e coloque na barra de pesquisa a cima. nisso, selecione a pasta que voce criou antes. agora, va na opção terminal, depois na opção "abrir novo terminal" e escreva as linhas a baixo para criar o seu servido
 
 ```bash
 npm init -y
