@@ -1,6 +1,6 @@
 # Iniciando um projeto Node.js com TypeScript
 abra o github e crie um repositório,para criar um repositório, va na barra da esquerda, clique no botao "new", vá em "repository name" e de um nome a seu seu repositório, depois, vá para a opção "add a README file" e a habilite. Após isso, apenas clique na opção "create repository" e parabens, voce criou um repositório :]
-Depois disso, crie uma pasta, abra o github, va na opção "clone git repository" vá no repositório que voce criou, vá na opção "code", copie o link e coloque na barra de pesquisa a cima. nisso, selecione a pasta que voce criou antes. agora, va na opção terminal, depois na opção "abrir novo terminal" e escreva as linhas a baixo para criar o seu servido
+Depois disso, crie uma pasta, abra o github, va na opção "clone git repository" vá no repositório que voce criou, vá na opção "code", copie o link e coloque na barra de pesquisa a cima. nisso, selecione a pasta que voce criou antes. agora, va na opção terminal, depois na opção "abrir novo terminal" e escreva as linhas a baixo para criar o seu servidor. (não escreva a ultima linha, ela não vai rodar, voce tem que ir em "scr" e criar umarquivo app.ts manualmente)
 
 ```bash
 npm init -y
@@ -13,7 +13,7 @@ touch src/app.ts
 
 ## Configuranado o `tsconfig.json`
 
-Mude a linha ```"outDir": "./",``` para ```"outDir": "./dist",``` e adicione a linha ```"rootDir": "./src",```, seu arquivo de configuração do compilador do TypeScript ficará mais ou menos assim.
+com o server criado, voce irá para a pasta "tsconfig.json" voce irá adicionar ' "outDir": "./", ' para `"outDir": "./dist",` e adicione a linha `"rootDir": "./src",`nas linhas 58 e 59 e sem deixar como comentário e deve ficar mais ou menos assim:
 
 ```json
 {
@@ -31,8 +31,7 @@ Mude a linha ```"outDir": "./",``` para ```"outDir": "./dist",``` e adicione a l
 ```
 
 ## Configurando o `package.json`
-
-Adicione o seguinte script ao seu `package.json`
+agora, vá para a pasta "package.json" e substitua o que estiver dentro das chaves de "scripts" pelo o que está dentro das cheves deste código abaixo:
 
 ```json
 "scripts": {
@@ -42,7 +41,7 @@ Adicione o seguinte script ao seu `package.json`
 
 ## Criando arquivo inicial do servidor
 
-Adicione o seguinte código ao arquivo `src/app.ts`
+vá para a pasta app.ts que voce havia criado antes e escreva o código abaixo:
 
 ```typescript
 import express from 'express';
@@ -65,15 +64,9 @@ app.listen(port, () => {
 
 ## Inicializando o servidor
 
-```bash
-npm run dev
-```
-
-Se tudo ocorrer bem, você verá a mensagem `Server running on port 3333` no terminal.
+abra  terminal novamente, e digite 'npm run dev' 
+E se tudo ocorrer bem, você verá a mensagem "Server running on port 3333" no terminal.
 
 ## Testando o servidor
 
-Abra o navegador e acesse `http://localhost:3333`, você verá a mensagem `Hello World`.
-  res.json(users);
-});
-```
+Abra o navegador e acesse `http://localhost:3333`, você deverá ver a mensagem `Hello World`.
