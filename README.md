@@ -75,3 +75,96 @@ app.listen(port, () => {
 ## Testando o servidor
 
 - Abra o navegador e digite `http://localhost:3333`, você deverá ver a mensagem `Hello World`. Parabens voce agora tem um local host :D
+
+## configurendo o banco de dados
+
+- Abra o vscode, ligue o server, e crie um arquivo `database.ts` dentro da pasta `src` e adicione o seguinte código:
+
+
+import { open, Database} from 'sqlite';
+import sqlite3 from 'sqlite3';
+
+let instance: Database | null = null;
+
+export async function connect() {
+  if (instance) return instance;
+
+  const db = await open({
+     filename: './src/database.sqlite',
+     driver: sqlite3.Database
+   });
+  
+  await db.exec(`
+    CREATE TABLE IF NOT EXISTS users (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT,
+      email TEXT
+    )
+  `);
+
+  instance = db;
+  return db;
+}
+
+## zadicionando um banco de daod ao servidor
+
+-Vá na pasta `app.ts` e substitua o código que está lá pelo código abaixo:
+
+
+import express from 'express';
+import cors from 'cors';
+import { connect } from './database';
+
+const port = 3333;
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
+
+app.post('/users', async (req, res) => {
+  const db = await connect();
+  const { name, email } = req.body;
+
+  const result = await db.run('INSERT INTO users (name, email) VALUES (?, ?)', [name, email]);
+  const user = await db.get('SELECT * FROM users WHERE id = ?', [result.lastID]);
+
+  res.json(user);
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+
+app.get('/users', async (req, res) => {
+  const db = await connect();
+  const users = await db.all('SELECT * FROM users');
+
+  res.json(users);
+});
+
+## testando a inserção de dados
+
+- No vscode, vá na barra da esquerda e clique no ultimo ícone, nisso, voce pesquisará po `REST client` e baixe-o.
+- Crie uma pasta `ts.http` e insira o seguinte código:
+
+{
+  "name": "John Doe",
+  "email": "
+}
+
+- E se tudo ocorrer bem, voce verá a resposta com o usuário e o email inseridos
+
+ ## listando os usuários
+
+ - Para listar os usuários, voce deverá colocar a rota `/users` no servidor, para isso, vá na pasta `app.ts` e adicione o seguinte código no final:
+
+ app.get('/users', async (req, res) => {
+  const db = await connect();
+  const users = await db.all('SELECT * FROM users');
+
+  res.json(users);
+});

@@ -1,7 +1,7 @@
 {
   "name": "2024-ia22-2tri",
   "version": "1.0.0",
-  "description": "",
+  "description": "- Abra o github e crie um repositório,para criar um repositório, va na barra da esquerda, clique no botao \"new\", vá em \"repository name\" e de um nome a seu seu repositório, depois,  vá para a opção \"add a README file\" e a habilite. Após isso, apenas clique na opção \"create repository\" e parabens, voce criou um repositório :]",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
