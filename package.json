@@ -1,7 +1,7 @@
 {
   "name": "2024-ia22-2tri",
   "version": "1.0.0",
-  "description": "- Abra o github e crie um repositório,para criar um repositório, va na barra da esquerda, clique no botao \"new\", vá em \"repository name\" e de um nome a seu seu repositório, depois,  vá para a opção \"add a README file\" e a habilite. Após isso, apenas clique na opção \"create repository\" e parabens, voce criou um repositório :]",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kriegs1889/2024-IA22-2TRI.git"
+    "url": "git+https://github.com/helo-wordd/2024-IA22-2TRI.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Kriegs1889/2024-IA22-2TRI/issues"
+    "url": "https://github.com/helo-wordd/2024-IA22-2TRI/issues"
   },
-  "homepage": "https://github.com/Kriegs1889/2024-IA22-2TRI#readme",
+  "homepage": "https://github.com/helo-wordd/2024-IA22-2TRI#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
